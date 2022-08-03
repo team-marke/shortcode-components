@@ -1,4 +1,4 @@
-const CloudinaryImageURL = require("../core-components/CloudinaryImageURL");
+const CloudinaryImageURL = require("../../core-components/CloudinaryImageURL");
 
 function Masthead(content, img) {
   return `

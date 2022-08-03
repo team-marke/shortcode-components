@@ -1,3 +1,4 @@
+const { log } = require("console");
 const glob = require("glob");
 const path = require("path");
 
@@ -6,7 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/core-components/");
 
   const paths = {
-    components: path.join(process.cwd(), "src/components/**/*"),
+    components: path.join(process.cwd(), "src/components/**/*.mk.js"),
     coreComponents: path.join(process.cwd(), "src/core-components/**/*"),
   };
 
@@ -14,11 +15,12 @@ module.exports = function (eleventyConfig) {
   const coreComponents = glob.sync(paths.coreComponents);
 
   for (const component of components) {
-    eleventyConfig.addPairedShortcode(path.parse(component).name, require(component))
+    const componentName = path.parse(component).base.replace(/\.mk\.js/, "");
+    eleventyConfig.addPairedShortcode(componentName, require(component));
   }
 
   for (const component of coreComponents) {
-    eleventyConfig.addShortcode(path.parse(component).name, require(component))
+    eleventyConfig.addShortcode(path.parse(component).name, require(component));
   }
 
   return {
