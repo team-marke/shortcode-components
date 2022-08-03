@@ -29,7 +29,6 @@
   "dependencies": {
     "@popperjs/core": "^2.11.5",
     "bootstrap": "5.2.0",
-    "nunjucks": "^3.2.3",
     "swiper": "^8.3.1"
   },
   "files": [

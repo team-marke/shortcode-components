@@ -13,6 +13,18 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <h2 class="mb-4">Button</h2>
+        {% Button button.href, 'secondary', false, false, false, ['text-danger'], {"data-foo": "bar"} %}
+          Lorem Ipsum
+        {% endButton %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
         <h2 class="mb-4">Carousel</h2>
         {% Carousel 'http://lorempixel.com.br/500/400?1' %}
           Hello
@@ -25,44 +37,10 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="mb-4">Button</h2>
-        {% Button button.href, '_blank' %}Lorem Ipsum{% endButton %}
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <h2 class="mb-4">Card</h2>
-        {% Card card.img, card.title %}
-        <p>{{ card.text }}</p>
-        {% endCard %}
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
         <h2 class="mb-4">Navbar</h2>
         {% Navbar { src: navbar.logo.src, alt: navbar.logo.alt } %}
           Hello
         {% endNavbar %}
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="mb-4">Masthead</h2>
-        {% Masthead 'http://lorempixel.com.br/500/400?1' %}
-          Hello
-        {% endMasthead %}
       </div>
     </div>
   </div>
